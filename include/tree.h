@@ -6,7 +6,7 @@
 
 class Tree {
  private:
-  struct {
+  struct Node { // ...
     char value;
     std::vector<Node*> child;
   };
