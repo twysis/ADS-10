@@ -17,20 +17,20 @@ class Tree {
     if (_numbers.size() == 0)
       return;
     if (root->value != '-') {
-      for (size_t  i = _numbers.begin(); i != _numbers.end(); ++i) {
+      for (auto  i = _numbers.begin(); i != _numbers.end(); ++i) {
         if (*i == root->value) {
           _numbers.erase(i);
           break;
         }
       }
     }
-    for (size_t  i = 0; i < _numbers.size(); ++i) {
+    for (size_t i = 0; i < _numbers.size(); ++i) {
       root->child.push_back(new Node);
     }
-    for (size_t  i = 0; i < root->child.size(); ++i) {
+    for (size_t i = 0; i < root->child.size(); ++i) {
       root->child[i]->value = _numbers[i];
     }
-    for (size_t  i = 0; i < root->child.size(); ++i) {
+    for (size_t i = 0; i < root->child.size(); ++i) {
       createTree(root->child[i], _numbers);
     } 
   }
@@ -43,13 +43,13 @@ class Tree {
       numbers.push_back(number);
       return;
     }
-    for (size_t  i = 0; i < root->child.size(); ++i) {
+    for (size_t i = 0; i < root->child.size(); ++i) {
       perm(root->child[i], number);
     }
   }
   public:
   std::string operator[](int i) const {
-    return child[i];
+    return numbers[i];
   }
   explicit Tree(std::vector<char> value) {
     root = new Node;
