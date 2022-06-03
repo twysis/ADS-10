@@ -12,8 +12,8 @@ class Tree {
   };
   Node* root;
   std::vector<std::string> numbers;
-  
-  void createTree(Node* root, std::vector<char> _numbers){
+
+  void createTree(Node* root, std::vector<char> _numbers) {
     if (_numbers.size() == 0)
       return;
     if (root->value != '-') {
@@ -32,7 +32,7 @@ class Tree {
     }
     for (size_t i = 0; i < root->child.size(); ++i) {
       createTree(root->child[i], _numbers);
-    } 
+    }
   }
   void perm(Node* root, std::string number = ""){
     if (root->value != '-') {
@@ -47,9 +47,10 @@ class Tree {
       perm(root->child[i], number);
     }
   }
-  public:
+
+ public:
   std::string operator[](int i) const {
-    return numbers[i];
+  return numbers[i];
   }
   explicit Tree(std::vector<char> value) {
     root = new Node;
