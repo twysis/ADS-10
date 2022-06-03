@@ -34,7 +34,7 @@ class Tree {
       createTree(root->child[i], _numbers);
     }
   }
-  void perm(Node* root, std::string number = ""){
+  void perm(Node* root, std::string number = "") {
     if (root->value != '-') {
       number += root->value;
     }
