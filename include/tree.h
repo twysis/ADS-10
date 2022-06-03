@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-class optionsTree {
+class Tree {
  private:
   struct {
     char value;
@@ -51,7 +51,7 @@ class optionsTree {
   std::string operator[](int i) const {
     return child[i];
   }
-  explicit optionsTree(std::vector<char> value) {
+  explicit Tree(std::vector<char> value) {
     root = new Node;
     root->value = '-';
     createTree(root, value);
